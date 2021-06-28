@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="Argparse Helper",
+    name="argparse_helper",
     version=".1",
     author="Tyler Bruno",
     packages=setuptools.find_packages(),
