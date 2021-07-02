@@ -40,11 +40,11 @@ class CLI:
     arg_parser: Union[ParseArgs, None]
     args_to_parser: ArgsToParser = field(default=BasicArgsToParser())
 
-    def __call__(self):
+    def __call__(self, args=None, name_space=None):
         parser = argparse.ArgumentParser(self.name)
         self.args_to_parser(parser, self.argument_groups)
 
-        user_input = parser.parse_args()
+        user_input = parser.parse_args(args, name_space)
 
         if self.arg_parser:
             return self.arg_parser(user_input)
